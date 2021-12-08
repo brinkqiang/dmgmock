@@ -23,7 +23,7 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 LibImport("dmgmock" "src/dmgmock")
 
 if(USE_DMGMOCK_TEST)
-    ExeImport("test" "dmgmock")
+    ExeImport("test" "dmgmock;dmgmock_main")
 endif(USE_DMGMOCK_TEST)
 
 #ADD_CUSTOM_COMMAND(
