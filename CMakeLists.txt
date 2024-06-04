@@ -12,6 +12,7 @@ SET(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 LibImport("dmgmock" "src/dmgmock")
+LibImport("dmgmock_main" "src/dmgmock_main")
 
 if(PROJECT_IS_TOP_LEVEL)
     ExeImport("test" "dmgmock;dmgmock_main")
