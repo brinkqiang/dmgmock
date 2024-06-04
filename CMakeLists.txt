@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.8)
 
 PROJECT(dmgmock)
 
@@ -8,23 +8,14 @@ INCLUDE(cmake/ModuleCompileOptions.cmake)
 ModuleSetCompileOptions()
 ModuleSetWinCompilerFlags()
 
-SET(DMGMOCK_VERSION_MAJOR "1")
-SET(DMGMOCK_VERSION_MINOR "0")
-SET(DMGMOCK_VERSION_PATCH "1")
-SET(DMGMOCK_VERSION "${DMGMOCK_VERSION_MAJOR}.${DMGMOCK_VERSION_MINOR}.${DMGMOCK_VERSION_PATCH}")
-
-MESSAGE(STATUS "VERSION: ${DMGMOCK_VERSION}")
-
-OPTION(USE_DMGMOCK_TEST "use dmgmock" OFF)
-
 SET(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 LibImport("dmgmock" "src/dmgmock")
 
-if(USE_DMGMOCK_TEST)
+if(PROJECT_IS_TOP_LEVEL)
     ExeImport("test" "dmgmock;dmgmock_main")
-endif(USE_DMGMOCK_TEST)
+endif(PROJECT_IS_TOP_LEVEL)
 
 #ADD_CUSTOM_COMMAND(
 #TARGET dmgmocktest
