@@ -26,6 +26,5 @@ dmgmock
 ```cpp
 ```
 ## Contacts
-[![Join the chat](https://badges.gitter.im/brinkqiang/dmgmock/Lobby.svg)](https://gitter.im/brinkqiang/dmgmock)
 
 ## Thanks
